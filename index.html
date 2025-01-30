@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="portfolioApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-route.min.js"></script>
+    <script src="lib/angular-animate.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="lib/typed.umd.js"></script>
+    <title ng-bind="$root.title">dumiduPramith</title>
+    <link rel="icon" href="images/icon.png" type="image/x-icon" />
+    <base href="/" />
+  </head>
+  <body ng-controller="indexController">
+    <nav
+      id="navbar"
+      class="d-flex justify-content-between mt-3 mt-md-4 navbar fixed-top container d-none"
+    >
+      <div class="d-flex">
+        <p
+          id="name"
+          class="nav-brand m-0 fw-bolder f-500 cursor-pointer fadein-top"
+          ng-click="goToUrl('/')"
+        >
+          dumiduPramith();
+        </p>
+      </div>
+      <div class="middle d-none d-md-block">
+        <ul id="nav-menu" class="d-flex list-unstyled m-0">
+          <li
+            ng-repeat="link in links"
+            ng-click="goToUrl(link.url)"
+            ng-class="{'link-active' : isActive(link.url),'text-white' : isActive(link.url)}"
+            class="text-grey-700 text-grey-500"
+          >
+            {{link.title}}
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <a href="https://github.com/DumiduPramith" target="_blank"
+          ><img
+            src="images/icons/github_1.png"
+            alt="github"
+            width="36px"
+            height="36px"
+            class="rounded-full fadein-top"
+        /></a>
+      </div>
+    </nav>
+
+    <main ng-view id="list-item"></main>
+    <nav class="spacer-6 d-md-none"></nav>
+    <footer
+      class="nav-border-bottom rounded-border left fixed-bottom d-md-none backdrop-blur-md bg-opacity-80"
+    >
+      <nav class="text-xs my-3 px-5 mx-sm-5 overflow-hidden">
+        <ul
+          id="bottom-nav"
+          class="list-unstyled d-flex justify-content-between fw-400"
+        >
+          <li
+            ng-repeat="link in links"
+            ng-click="goToUrl(link.url)"
+            ng-class="{'link-active' : isActive(link.url)}"
+          >
+            {{link.title}}
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

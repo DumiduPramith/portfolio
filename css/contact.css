@@ -1,0 +1,52 @@
+.wrap-input100 {
+  display: flex;
+  flex-direction: column;
+}
+
+.input100 {
+  width: 100%;
+  height: 45px;
+  border-radius: 18px;
+  padding: 0 30px;
+  background: #afb6ba;
+  margin-top: 7px !important;
+}
+
+.input100:focus {
+  animation: glow 800ms ease-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #ffdb70;
+  }
+  100% {
+    box-shadow: 0 0 20px #ffdb70;
+  }
+}
+
+textarea.input100 {
+  min-height: 150px;
+  padding: 14px 30px;
+  border-radius: 25px;
+  margin-top: 7px !important;
+}
+
+.send-message-btn {
+  border-radius: 15px;
+  background-color: #ffdb70;
+}
+
+.send-message-btn:hover {
+  color: #5d5252;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Edge 12-18 */
+  color: white;
+}

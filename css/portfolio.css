@@ -1,0 +1,58 @@
+.border-card {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 56 56 / var(--tw-border-opacity));
+  border-width: 1px;
+}
+
+.bg-card {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 30 31 / var(--tw-bg-opacity));
+}
+
+.blur-load {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.blur-load::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: pulse 2.5s infinite;
+  background-color: white;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.blur-load.loaded::before {
+  animation: none;
+  content: none;
+}
+
+.blur-load img {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.blur-load.loaded {
+  background-size: unset !important;
+}
+
+.blur-load.loaded img {
+  opacity: 1;
+}

@@ -1,0 +1,111 @@
+<div class="container mt-5">
+  <div id="about-me" class="p-5 bg-about-me border-about-me rounded-3xl">
+    <div class="d-flex align-items-center fadein-top">
+      <h2 class="mr-2">About Me</h2>
+      <div class="line w-25 bg-amber-200"></div>
+    </div>
+    <div class="d-lg-flex">
+      <div class="d-flex justify-content-center mr-lg-5 mt-4 fadein-up">
+        <img
+          src="images/avatar.jpg"
+          alt="avatar"
+          class="rounded-full about-avatar"
+        />
+      </div>
+      <div class="d-flex flex-column justify-content-center mt-4 mt-lg-0">
+        <p class="text-justify fadein-right fadeins-1">
+          &emsp;&emsp;&emsp;Hi everyone! My name is Dumidu Pramith. I'm a web
+          developer from Sri lanka. I have 1 year of experience in back-end web
+          development. i really enjoying what i do right now, in my opinion,
+          creating programming is not just a job, but also an art that has
+          aesthetic value.
+        </p>
+        <p class="text-justify fadein-right fadeins-2">
+          &emsp;&emsp;&emsp;My job is to build your website to be functional and
+          user-friendly yet still attractive. In addition, i provide a personal
+          touch to your product and ensure that the website caches attention and
+          is easy to use. My goal is convey your message and identity in the
+          most creative way. If you are interested in hiring me, please contact
+          the listed contact
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="skills" class="mt-5" ng-init="showTechStack=true; showTools=false">
+    <div class="d-flex align-items-center fadein-left">
+      <div class="line bg-amber-200 w-10"></div>
+      <h2 class="ml-2">Skills</h2>
+    </div>
+    <div class="d-flex mt-3">
+      <button
+        class="px-3 py-2 bg-opacity-10 rounded-lg cursor-pointer fw-500 border-0 mr-3 fadein-up hover:text-amber-200"
+        ng-class="showTechStack ? 'text-amber-200 bg-amber-200' : 'color-white' "
+        ng-click="showTechStack = true; showTools = false; skillsFn()"
+      >
+        Tech Stack
+      </button>
+      <button
+        class="px-3 py-2 bg-opacity-10 rounded-lg cursor-pointer fw-500 border-0 fadein-up fadeins-2 hover:text-amber-200"
+        ng-class="showTools ? 'text-amber-200 bg-amber-200' : 'color-white' "
+        ng-click="showTools = true; showTechStack = false; toolsFn()"
+      >
+        Tools
+      </button>
+    </div>
+    <div
+      ng-if="showTechStack"
+      id="tech-stack"
+      class="row mt-3 d-flex justify-content-center"
+    >
+      <div
+        ng-repeat="skill in skills"
+        class="col-12 col-sm-6 col-md-4 col-xl-3 p-3 ng-fadein-bottom"
+      >
+        <div
+          class="d-flex py-2 border-amber-200 card-border rounded align-items-center px-4 py-3 h-100 w-100 gap-1 hover:bg-amber-200 hover:bg-opacity-10 cursor-pointer item-tech"
+        >
+          <img
+            ng-src="images/icons/{{skill.icon}}"
+            alt="{{skill.skill}}"
+            class="skill-card item-tech-transition img-tech"
+          />
+          <div class="d-flex">
+            <h4 class="m-0 item-tech-transition tech">{{skill.skill}}</h4>
+            <p
+              class="m-0 fw-500 mt-3 position-absolute text-amber-200 item-tech-transition opacity-0 status-tech"
+              style="font-size: 14px"
+            >
+              {{skill.level}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-if="showTools" id="tools" class="row mt-3">
+      <div
+        ng-repeat="tool in tools"
+        class="col-12 col-sm-6 col-md-4 col-xl-3 p-3 ng-fadein-bottom"
+      >
+        <div
+          class="d-flex py-2 border-amber-200 card-border rounded align-items-center px-4 py-3 h-100 w-100 gap-1 hover:bg-amber-200 hover:bg-opacity-10 cursor-pointer item-tech"
+        >
+          <img
+            ng-src="images/icons/{{tool.icon}}"
+            alt="{{tool.tool}}"
+            class="skill-card item-tech-transition img-tech"
+          />
+          <div class="d-flex">
+            <h4 class="m-0 item-tech-transition tech">{{tool.tool}}</h4>
+            <p
+              class="m-0 fw-500 mt-3 position-absolute text-amber-200 item-tech-transition opacity-0 status-tech"
+              style="font-size: 14px"
+            >
+              {{tool.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="spacer-6"></div>

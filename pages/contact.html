@@ -1,0 +1,58 @@
+<div class="d-flex container mt-5">
+  <div class="p-0">
+    <h1 class="fadein-left">Let's <span class="text-amber-200">talk</span></h1>
+    <p class="m-0 fadein-up">
+      To request a quoute or want to meet up for coffee, contact me directly via
+      <span class="text-amber-200 font-weight-bold cursor-pointer"
+        >dumidu42@gmail.com</span
+      >
+      or fill out the form and i will get back to you soon.
+    </p>
+    <div class="mt-5">
+      <form class="gap-1 d-flex flex-column">
+        <div class="wrap-input100">
+          <label class="m-0 fadein-left" for="name">Your Name</label>
+          <input
+            ng-class="{'fadein-up': !oneTimeRan}"
+            class="input100 border-0"
+            type="text"
+            name="name"
+            id="name"
+          />
+        </div>
+        <div class="wrap-input100">
+          <label class="m-0 fadein-left" for="email">Your Email</label>
+          <input
+            ng-class="{'fadein-up': !oneTimeRan}"
+            class="input100 border-0"
+            type="email"
+            name="email"
+            id="email"
+          />
+        </div>
+        <div class="wrap-input100">
+          <label class="m-0 fadein-left" for="message">Your Message</label>
+          <textarea
+            ng-class="{'fadein-up': !oneTimeRan}"
+            class="input100 m-0 border-0"
+            name="message"
+            id="message"
+            placeholder="Type your message here..."
+          ></textarea>
+        </div>
+        <div>
+          <button
+            class="px-3 py-2 fw-500 cursor-pointer fw-500 border-0 send-message-btn fadein-left"
+          >
+            SEND MESSAGE
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    class="d-none d-md-flex justify-content-center align-items-center w-100 fadein-right"
+  >
+    <img src="images/icons/mail.png" alt="mail" />
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div
+  id="home"
+  class="d-flex flex-column-reverse flex-md-row justify-content-center align-items-center"
+>
+  <div
+    class="d-flex flex-column align-items-center d-md-block mt-5 ml-md-5 ml-lg-0 mr-lg-5"
+  >
+    <p class="text-amber-200 mb-0 text-lg-p f-500 fadein-left">
+      Hello World, I'm
+    </p>
+    <div class="d-flex d-md-block d-lg-flex text-lg">
+      <div class="d-flex fadein-up">
+        <h1 class="m-md-0">Dumidu</h1>
+        <h1 class="d-md-none d-lg-block">&nbsp</h1>
+        <h1>Pramith</h1>
+      </div>
+    </div>
+    <h1 class="text-xl font-semibold to-yellow-500 gradient-text fadein-up">
+      <span class="auto-type"></span>
+    </h1>
+    <p class="text-lg-p2 f-500 fadein-left">
+      Welcome to My personal website <span class="wave">👋🏼</span>
+    </p>
+
+    <div class="d-flex gap-1 gap-md-2 mt-4">
+      <div
+        ng-repeat="social in socialMedias"
+        ng-click="goToUrl_new(social.url)"
+        ng-class="{'fadein-up' : !removeFadeIn}"
+        class="rounded-full border-amber-200 social-icon-tab cursor-pointer"
+      >
+        <img
+          class="social-icon"
+          ng-src="images/SVG/{{social.icon}}"
+          alt="{{social.media}}"
+        />
+      </div>
+    </div>
+
+    <a
+      class="text-decoration-none"
+      href="other_files/DumiduPramith_CV.pdf"
+      download="GFG"
+    >
+      <button
+        class="d-flex justify-content-center align-items-center py-3 px-4 mt-4 text-amber-200 bg-amber-200 bg-opacity-10 rounded-lg cursor-pointer fw-500 border-0 fadein-left button-hover hover:button button"
+      >
+        <img
+          src="images/icons/download.png"
+          alt="download"
+          height="22"
+          width="22"
+          class="mr-2"
+        />Download Resume
+      </button>
+    </a>
+  </div>
+  <div id="profile-img" class="fadein-right mx-5 fadein-right">
+    <img
+      src="images/avatar.jpg"
+      alt="avatar"
+      decoding="async"
+      class="border-4 rounded-full border-amber-200"
+    />
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <div class="d-flex flex-column align-items-center mb-4 fadein-top">
+    <h2 class="fw-700">Past Project Experience</h2>
+    <p class="gradient-text fs-1">Explore the project I've worked on so far</p>
+  </div>
+  <div class="row fade-zoom-in">
+    <div
+      id="card-wrapper"
+      class="col-12 col-md-6 col-lg-4 p-3"
+      ng-repeat="project in projects"
+    >
+      <div
+        class="rounded-3xl border-card bg-card p-4 w-100 h-100 hover:up-card hover:bg-card"
+      >
+        <div id="portfolio-card" class="d-flex flex-column gap-_5">
+          <div
+            class="blur-load"
+            ng-class="{'loaded': isImageLoaded(project)}"
+            ng-style="{
+              'background-image': 'url(images/portfolio_small/' + (project.image.name | backgroundImage) + ')',
+              'padding-bottom': calculateAspectRatio(project.image.width, project.image.height)
+            }"
+          >
+            <img
+              ng-src="{{'images/portfolio/' + project.image.name}}"
+              ng-onload="setImageLoaded(project)"
+              alt="{{project.title}}"
+              class="w-100 h-100 rounded-3xl"
+              loading="lazy"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <h3 class="mt-3">{{project.title}}</h3>
+          </div>
+          <p class="text-justify">{{project.description}}</p>
+          <p class="text-amber-200 fw-500 fs-2">{{project.technology}}</p>
+          <div class="d-flex justify-content-end align-items-center">
+            <a
+              ng-if="project.github_link"
+              href="{{project.github_link}}"
+              target="_blank"
+              ><img
+                src="images/icons/github__.png"
+                alt=""
+                width="32"
+                height="32"
+            /></a>
+            <a
+              ng-if="project.live_link"
+              href="{{project.live_link}}"
+              target="_blank"
+              ><img
+                src="images/icons/open_new_.png"
+                alt=""
+                width="22"
+                height="22"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
