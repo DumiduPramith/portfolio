@@ -3,6 +3,7 @@
 }
 
 .about-avatar {
+  max-width: 423px;
   width: 100%;
   height: auto;
 }
